@@ -1,4 +1,4 @@
-import { Adress } from "../../../../domain/entity/Adress";
+import { Address } from "../../../../domain/entity/Address";
 import { IAddressRepository } from "../../../ports/adapters/IAddressRepository";
 import { IFindAllAddresses } from "../../../ports/Address/IFindAllAddress";
 
@@ -10,7 +10,7 @@ export class FindaAllAddresses implements IFindAllAddresses {
         this.FindAllAddressesRepository = findAllAddressesRepo;
     }
 
-    findAll(): Adress[] {
+    findAll(): Address[] {
         return this.FindAllAddressesRepository.findAll();
     }
 }

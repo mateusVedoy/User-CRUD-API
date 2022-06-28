@@ -1,6 +1,6 @@
-import { ICreateUserRepository } from "../../application/ports/adapters/IUserRepository";
-import { TUser } from "../../application/ports/User/TUser";
-import { User } from "../../domain/entity/User";
+import { ICreateUserRepository } from "../../../application/ports/adapters/IUserRepository";
+import { TUser } from "../../../application/ports/User/TUser";
+import { User } from "../../../domain/entity/User";
 
 export class CreateUserRepository implements ICreateUserRepository {
 

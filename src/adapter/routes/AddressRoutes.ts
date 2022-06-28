@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createAddressControl, findAllAddressesControl } from "../../main/Address/main";
+import { createAddressControl, findAllAddressesControl } from "../../main/in-memory/Address/main";
 
 const addressRouter = Router();
 

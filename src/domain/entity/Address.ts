@@ -1,4 +1,4 @@
-export class Adress {
+export class Address {
     public addressId: string;
     public country: string;
     public state: string;

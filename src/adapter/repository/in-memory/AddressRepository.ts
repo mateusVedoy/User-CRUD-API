@@ -1,6 +1,6 @@
-import { IAddressRepository } from "../../application/ports/adapters/IAddressRepository";
-import { TAddress } from "../../application/ports/Address/TAddress";
-import { Adress } from "../../domain/entity/Adress";
+import { IAddressRepository } from "../../../application/ports/adapters/IAddressRepository";
+import { TAddress } from "../../../application/ports/Address/TAddress";
+import { Address } from "../../../domain/entity/Address";
 
 export class CreateAddressRepository implements IAddressRepository {
 
@@ -16,7 +16,7 @@ export class CreateAddressRepository implements IAddressRepository {
         }
     ]
 
-    create({ addressId, country, state, city, neighborhood, street, streetNumber }: TAddress): Adress {
+    create({ addressId, country, state, city, neighborhood, street, streetNumber }: TAddress): Address {
         const address = {
             addressId: addressId,
             country: country,
@@ -31,7 +31,7 @@ export class CreateAddressRepository implements IAddressRepository {
         return address;
     }
 
-    findAll(): Adress[] {
+    findAll(): Address[] {
         return this.address;
     }
 }
