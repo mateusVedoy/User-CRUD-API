@@ -8,14 +8,14 @@ export class CreateAddressController implements IAddressController {
 
     static CreateAddressService: ICreateAddress;
 
-    constructor(createAddressService: ICreateAddress){
+    constructor(createAddressService: ICreateAddress) {
         CreateAddressController.CreateAddressService = createAddressService;
     }
 
     handle(req: Request, res: Response): Response<TAddress> {
-        const address = req.body;
-        const createdAddress = CreateAddressController.CreateAddressService.create(address);
-        return res.json({"New Address": createdAddress});
+        const { addressId, country, state, city, neighborhood, street, streetNumber } = req.body;
+        const createdAddress = CreateAddressController.CreateAddressService.create(addressId, country, state, city, neighborhood, street, streetNumber);
+        return res.json({ "New Address": createdAddress });
     };
 }
 
@@ -23,12 +23,12 @@ export class FindAllAddressesController implements IAddressController {
 
     static FindAllAddressesService: IFindAllAddresses;
 
-    constructor(findAllAddressesService: IFindAllAddresses){
+    constructor(findAllAddressesService: IFindAllAddresses) {
         FindAllAddressesController.FindAllAddressesService = findAllAddressesService;
     }
 
     handle(_: Request, res: Response): Response<TAddress> {
         const allAddresses = FindAllAddressesController.FindAllAddressesService.findAll();
-        return res.json({"Addresses: ": allAddresses});
+        return res.json({ "Addresses: ": allAddresses });
     }
 }
