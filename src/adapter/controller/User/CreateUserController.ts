@@ -5,15 +5,15 @@ import { ICreateUser } from "../../../application/ports/User/ICreateUser";
 
 export class CreateUserController implements IUserController {
 
-    static CreateUserService: ICreateUser;
+    private CreateUserService: ICreateUser;
 
     public constructor(createUserService: ICreateUser) {
-        CreateUserController.CreateUserService = createUserService
+        this.CreateUserService = createUserService
     }
 
     handle(req: Request, res: Response): Response {
-        const {userId, userFullName} = req.body;
-        const createdUser = CreateUserController.CreateUserService.create(userId, userFullName);
+        const { userId, userFullName } = req.body;
+        const createdUser = this.CreateUserService.create(userId, userFullName);
         return res.json(createdUser);
     }
 }
