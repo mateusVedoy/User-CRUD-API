@@ -1,6 +1,5 @@
 import { Address } from "../../../domain/entity/Address";
-import { TAddress } from "./TAddress";
 
 export interface ICreateAddress {
-    create({ addressId, country, state, city, neighborhood, street, streetNumber }: TAddress): Address;
+    create(addressId: string, country: string, state: string, city: string, neighborhood: string, street: string, streetNumber: number): Address;
 }
