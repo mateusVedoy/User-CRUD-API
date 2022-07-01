@@ -4,30 +4,10 @@ import { Address } from "../../../domain/entity/Address";
 
 export class CreateAddressRepository implements IAddressRepository {
 
-    public address = [
-        {
-            "addressId": "1",
-            "country": "Brasil",
-            "state": "RS",
-            "city": "Porto Alegre",
-            "neighborhood": "Centro Histórico",
-            "street": "Rua Cel. Fernando Machado",
-            "streetNumber": 613
-        }
-    ]
+    public address = []
 
-    create({ addressId, country, state, city, neighborhood, street, streetNumber }: TAddress): Address {
-        const address = {
-            addressId: addressId,
-            country: country,
-            state: state,
-            city: city,
-            neighborhood: neighborhood,
-            street: street,
-            streetNumber: streetNumber
-        }
+    create(address: Address): Address {
         this.address.push(address);
-
         return address;
     }
 
