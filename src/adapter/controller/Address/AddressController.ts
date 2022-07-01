@@ -6,29 +6,29 @@ import { IFindAllAddresses } from "../../../application/ports/Address/IFindAllAd
 
 export class CreateAddressController implements IAddressController {
 
-    static CreateAddressService: ICreateAddress;
+    private CreateAddressService: ICreateAddress;
 
     constructor(createAddressService: ICreateAddress) {
-        CreateAddressController.CreateAddressService = createAddressService;
+        this.CreateAddressService = createAddressService;
     }
 
     handle(req: Request, res: Response): Response<TAddress> {
         const { addressId, country, state, city, neighborhood, street, streetNumber } = req.body;
-        const createdAddress = CreateAddressController.CreateAddressService.create(addressId, country, state, city, neighborhood, street, streetNumber);
+        const createdAddress = this.CreateAddressService.create(addressId, country, state, city, neighborhood, street, streetNumber);
         return res.json({ "New Address": createdAddress });
     };
 }
 
 export class FindAllAddressesController implements IAddressController {
 
-    static FindAllAddressesService: IFindAllAddresses;
+    private FindAllAddressesService: IFindAllAddresses;
 
     constructor(findAllAddressesService: IFindAllAddresses) {
-        FindAllAddressesController.FindAllAddressesService = findAllAddressesService;
+        this.FindAllAddressesService = findAllAddressesService;
     }
 
     handle(_: Request, res: Response): Response<TAddress> {
-        const allAddresses = FindAllAddressesController.FindAllAddressesService.findAll();
+        const allAddresses = this.FindAllAddressesService.findAll();
         return res.json({ "Addresses: ": allAddresses });
     }
 }
