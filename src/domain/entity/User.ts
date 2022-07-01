@@ -1,5 +1,5 @@
 
-export class User {
+export class User{
 
     private userId: string;
     private userFullName: string;

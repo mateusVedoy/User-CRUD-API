@@ -1,4 +1,4 @@
-import { CreateAddressController, FindAllAddressesController } from "../../../adapter/controller/AddressController";
+import { CreateAddressController, FindAllAddressesController } from "../../../adapter/controller/Address/AddressController";
 import { CreateAddressRepository } from "../../../adapter/repository/in-memory/AddressRepository";
 import { CreateAddress } from "../../../application/useCases/Address/create-address/CreateAddress";
 import { FindaAllAddresses } from "../../../application/useCases/Address/findAll-addresses/FindAllAddresses";

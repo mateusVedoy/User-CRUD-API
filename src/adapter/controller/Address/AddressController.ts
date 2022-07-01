@@ -1,8 +1,8 @@
-import { TAddress } from "../../application/ports/Address/TAddress";
-import { IAddressController } from "../ports/IAddressController";
+import { TAddress } from "../../../application/ports/Address/TAddress";
+import { IAddressController } from "../../ports/IAddressController";
 import { Request, Response } from "express";
-import { ICreateAddress } from "../../application/ports/Address/ICreateAdress";
-import { IFindAllAddresses } from "../../application/ports/Address/IFindAllAddress";
+import { ICreateAddress } from "../../../application/ports/Address/ICreateAdress";
+import { IFindAllAddresses } from "../../../application/ports/Address/IFindAllAddress";
 
 export class CreateAddressController implements IAddressController {
 
