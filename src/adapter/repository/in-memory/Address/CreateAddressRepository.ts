@@ -1,6 +1,6 @@
 import { ICreateAddressRepository } from "../../../../application/ports/adapters/Address/ICreateAddressRepository";
 import { Address } from "../../../../domain/entity/Address";
-import { Addresses } from "../../../../adapter/database/in-memory/Address/Address";
+import { Addresses } from "../../../database/in-memory/Address/Address";
 
 export class CreateAddressRepository implements ICreateAddressRepository {
 
