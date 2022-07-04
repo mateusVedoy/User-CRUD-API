@@ -13,3 +13,5 @@ server.use(router);
 server.listen(3333, () => {
     console.log("Running at 3333");
 });
+
+export { server }

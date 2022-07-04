@@ -1,12 +1,12 @@
 import { Address } from "../../../../domain/entity/Address";
 import { ICreateAddress } from "../../../ports/Address/ICreateAdress";
-import { IAddressRepository } from "../../../ports/adapters/IAddressRepository";
+import { ICreateAddressRepository } from "../../../ports/adapters/Address/ICreateAddressRepository";
 
 export class CreateAddress implements ICreateAddress{
 
-    private CreateAddressRepository: IAddressRepository;
+    private CreateAddressRepository: ICreateAddressRepository;
 
-    constructor(createAddressRepository: IAddressRepository){
+    constructor(createAddressRepository: ICreateAddressRepository){
         this.CreateAddressRepository = createAddressRepository;
     }
 
