@@ -1,11 +1,11 @@
 
 import { IFindAllAddressesRepository } from "application/ports/adapters/Address/IFindAllAddressesrepository";
 import { Address } from "../../../../domain/entity/Address";
-import { AddressRepository } from "./AddressRepository";
+import { Addresses } from "../../../../adapter/database/in-memory/Address/Address";
 
-export class FindAllAddressesRepository extends AddressRepository implements IFindAllAddressesRepository {
+export class FindAllAddressesRepository implements IFindAllAddressesRepository {
 
     public findAll(): Address[] {
-        return super.getAddresses();
+        return Addresses;
     }
 }
