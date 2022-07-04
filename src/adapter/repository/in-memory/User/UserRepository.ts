@@ -4,11 +4,12 @@ export abstract class UserRepository {
 
     static users = [];
 
-    public setUser(user: User){
-        UserRepository.users.push(user)
+    public setUser(user: User): User{
+        UserRepository.users.push(user);
+        return user;
     }
 
-    public getUsers(){
+    public getUsers(): User[]{
         return UserRepository.users;
     }
 }

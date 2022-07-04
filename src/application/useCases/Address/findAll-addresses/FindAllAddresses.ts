@@ -1,12 +1,12 @@
 import { Address } from "../../../../domain/entity/Address";
-import { IAddressRepository } from "../../../ports/adapters/IAddressRepository";
+import { IFindAllAddressesRepository } from "../../../ports/adapters/Address/IFindAllAddressesRepository";
 import { IFindAllAddresses } from "../../../ports/Address/IFindAllAddress";
 
-export class FindaAllAddresses implements IFindAllAddresses {
+export class FindAllAddresses implements IFindAllAddresses {
 
-    private FindAllAddressesRepository: IAddressRepository;
+    private FindAllAddressesRepository: IFindAllAddressesRepository;
 
-    constructor(findAllAddressesRepo: IAddressRepository){
+    constructor(findAllAddressesRepo: IFindAllAddressesRepository){
         this.FindAllAddressesRepository = findAllAddressesRepo;
     }
 
