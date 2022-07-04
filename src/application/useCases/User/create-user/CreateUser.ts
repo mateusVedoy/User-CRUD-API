@@ -1,6 +1,6 @@
 import { User } from "../../../../domain/entity/User";
 import { ICreateUser } from "../../../ports/User/ICreateUser";
-import { ICreateUserRepository } from "../../../ports/adapters/IUserRepository";
+import { ICreateUserRepository } from "../../../ports/adapters/User/ICreateUserRepository";
 
 export class CreateUser implements ICreateUser {
 
