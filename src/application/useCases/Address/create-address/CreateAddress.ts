@@ -10,8 +10,8 @@ export class CreateAddress implements ICreateAddress{
         this.CreateAddressRepository = createAddressRepository;
     }
 
-    create(addressId: string, country: string, state: string, city: string, neighborhood: string, street: string, streetNumber: number): Address {
-        const address = new Address(addressId, country, state, city, neighborhood, street, streetNumber);
+    create(addressId: string, country: string, state: string, city: string, neighborhood: string, street: string, streetNumber: number, zipCode: string): Address {
+        const address = new Address(addressId, country, state, city, neighborhood, street, streetNumber, zipCode);
         return this.CreateAddressRepository.create(address);
     }
 }

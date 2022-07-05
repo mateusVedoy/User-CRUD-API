@@ -6,8 +6,9 @@ export class Address {
     private neighborhood: string;
     private street: string;
     private streetNumber: number;
+    private zipCode: string;
 
-    constructor(addressId: string, country: string, state: string, city: string, neighborhood: string, street: string, streetNumber: number){
+    constructor(addressId: string, country: string, state: string, city: string, neighborhood: string, street: string, streetNumber: number, zipCode: string){
         this.addressId = addressId;
         this.country = country;
         this.state = state;
@@ -15,6 +16,7 @@ export class Address {
         this.neighborhood = neighborhood;
         this.street = street;
         this.streetNumber = streetNumber;
+        this.zipCode = zipCode;
     }
 
     public getAddressId(){
@@ -67,5 +69,13 @@ export class Address {
 
     public setStreetNumber(number: number){
         this.streetNumber = number;
+    }
+
+    public getZipCode(){
+        return this.zipCode;
+    }
+
+    public setZipCode(zipCode: string){
+        this.zipCode = zipCode;
     }
 }
