@@ -12,8 +12,11 @@ export class CreateUserController implements IUserController {
     }
 
     handle(req: Request, res: Response): Response {
-        const { userFullName } = req.body;
-        const createdUser = this.CreateUserService.create(userFullName);
+        const { fullName, userContact, userAuth, addressId} = req.body;
+        const { cellPhone, email } = userContact;
+        const { ddi, ddd, number } = cellPhone;
+        const { login, pass, recoverEmail } = userAuth;
+        const createdUser = this.CreateUserService.create(fullName, ddi, ddd, number, email, login, pass, recoverEmail, addressId);
         return res.json(createdUser);
     }
 }
