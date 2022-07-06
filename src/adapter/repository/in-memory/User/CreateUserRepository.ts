@@ -1,11 +1,11 @@
-import { ICreateUserRepository } from "../../../../application/ports/adapters/User/ICreateUserRepository";
+import { ICreateUserRepository } from "../../../../application/ports/adapters/repository/User/ICreateUserRepository";
 import { User } from "../../../../domain/entity/User";
-import { UserRepository } from "./UserRepository";
+import { Users } from "../../../../adapter/database/in-memory/User/Users";
 
-export class CreateUserRepository extends UserRepository implements ICreateUserRepository {
+export class CreateUserRepository implements ICreateUserRepository {
 
     public create(user: User): User {
-        super.setUser(user);
+        Users.push(user)
         return user;
     }
 }
