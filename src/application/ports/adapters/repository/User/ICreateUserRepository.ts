@@ -1,4 +1,4 @@
-import { User } from "../../../../domain/entity/User";
+import { User } from "../../../../../domain/entity/User";
 
 export interface ICreateUserRepository {
     create(user: User): User;

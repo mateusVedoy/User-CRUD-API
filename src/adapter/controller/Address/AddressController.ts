@@ -1,7 +1,7 @@
 import { IAddressController } from "../../ports/IAddressController";
 import { Request, Response } from "express";
-import { ICreateAddress } from "../../../application/ports/Address/ICreateAdress";
-import { IFindAllAddresses } from "../../../application/ports/Address/IFindAllAddress";
+import { ICreateAddress } from "../../../application/ports/useCases/Address/ICreateAdress";
+import { IFindAllAddresses } from "../../../application/ports/useCases/Address/IFindAllAddress";
 import { Address } from "../../../domain/entity/Address";
 
 export class CreateAddressController implements IAddressController {
@@ -13,8 +13,8 @@ export class CreateAddressController implements IAddressController {
     }
 
     handle(req: Request, res: Response): Response<Address> {
-        const { addressId, country, state, city, neighborhood, street, streetNumber, zipCode } = req.body;
-        const createdAddress = this.CreateAddressService.create(addressId, country, state, city, neighborhood, street, streetNumber, zipCode);
+        const { country, state, city, neighborhood, street, streetNumber, zipCode } = req.body;
+        const createdAddress = this.CreateAddressService.create(country, state, city, neighborhood, street, streetNumber, zipCode);
         return res.json({ "New Address": createdAddress });
     };
 }

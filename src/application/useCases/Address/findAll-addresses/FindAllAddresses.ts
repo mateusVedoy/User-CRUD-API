@@ -1,6 +1,6 @@
 import { Address } from "../../../../domain/entity/Address";
-import { IFindAllAddressesRepository } from "../../../ports/adapters/Address/IFindAllAddressesRepository";
-import { IFindAllAddresses } from "../../../ports/Address/IFindAllAddress";
+import { IFindAllAddressesRepository } from "../../../ports/adapters/repository/Address/IFindAllAddressesRepository";
+import { IFindAllAddresses } from "../../../ports/useCases/Address/IFindAllAddress";
 
 export class FindAllAddresses implements IFindAllAddresses {
 
