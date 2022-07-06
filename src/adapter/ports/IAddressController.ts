@@ -1,6 +1,6 @@
-import { TAddress } from "../../application/ports/Address/TAddress";
 import { Request, Response } from "express";
+import { Address } from "../../domain/entity/Address";
 
 export interface IAddressController {
-    handle(req: Request, res: Response): Response<TAddress>;
+    handle(req: Request, res: Response): Response<Address>;
 }

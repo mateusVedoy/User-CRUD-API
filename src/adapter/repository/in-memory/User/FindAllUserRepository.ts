@@ -1,4 +1,4 @@
-import { IFindAllUserRepository } from "application/ports/adapters/User/IFindAllUserRepository";
+import { IFindAllUserRepository } from "application/ports/adapters/repository/User/IFindAllUserRepository";
 import { User } from "domain/entity/User";
 import { Users } from "../../../../adapter/database/in-memory/User/Users";
 

@@ -1,7 +1,7 @@
-import { IFindAllUsers } from "../../../ports/User/IFindAllUsers";
-import { ICreateUserRepository } from "../../../ports/adapters/User/ICreateUserRepository";
+import { IFindAllUsers } from "../../../ports/useCases/User/IFindAllUsers";
+import { ICreateUserRepository } from "../../../ports/adapters/repository/User/ICreateUserRepository";
 import { User } from "../../../../domain/entity/User";
-import { IFindAllUserRepository } from "application/ports/adapters/User/IFindAllUserRepository";
+import { IFindAllUserRepository } from "application/ports/adapters/repository/User/IFindAllUserRepository";
 
 export class FindAllUsers implements IFindAllUsers {
     private UserRepository: IFindAllUserRepository;
