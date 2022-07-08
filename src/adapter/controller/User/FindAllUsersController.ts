@@ -13,6 +13,6 @@ export class FindAllUsersController implements IUserController {
 
     public handle(_: Request, res: Response): Response<TUser[]> {
         const allUsers = this.FindAllUsersService.FindAll();
-        return res.json(allUsers);
+        return res.json({"Users": allUsers});
     }
 }

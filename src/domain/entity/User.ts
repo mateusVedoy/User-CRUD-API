@@ -15,7 +15,7 @@ export class User {
     private addressId: string;
 
     public constructor(id: string, fullName: string, cellPhoneDDI: string, cellPhoneDDD: string, cellPhone: string, email: string, login: string, pass: string, recoverEmail: string, addressId: string) {
-        this.setUserId(id);
+        this.userId = id;
         this.setUserFullName(fullName);
         this.setCellPhoneDDD(cellPhoneDDD);
         this.setCellPhoneDDI(cellPhoneDDI);
