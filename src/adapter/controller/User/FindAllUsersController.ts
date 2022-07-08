@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { IUserController } from "../../ports/IUserController";
 import { IFindAllUsers } from "../../../application/ports/useCases/User/IFindAllUsers";
 import { User } from "../../../domain/entity/User";
+import { TUser } from "../../../domain/types/TUser";
 
 export class FindAllUsersController implements IUserController {
     private FindAllUsersService: IFindAllUsers;
@@ -10,7 +11,7 @@ export class FindAllUsersController implements IUserController {
         this.FindAllUsersService = findAllUsers;
     }
 
-    public handle(_: Request, res: Response): Response<User[]> {
+    public handle(_: Request, res: Response): Response<TUser[]> {
         const allUsers = this.FindAllUsersService.FindAll();
         return res.json(allUsers);
     }

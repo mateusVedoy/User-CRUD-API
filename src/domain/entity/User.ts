@@ -111,14 +111,12 @@ export class User {
         return ({
             "userId": this.userId,
             "fullName": this.fullName,
-            "userContact": {
-                "cellPhone": {
-                    "ddi": this.cellPhoneDDI,
-                    "ddd": this.cellPhoneDDD,
-                    "number": this.cellPhoneNumber
-                },
-                "email": this.email
+            "cellPhone": {
+                "ddi": this.cellPhoneDDI,
+                "ddd": this.cellPhoneDDD,
+                "number": this.cellPhoneNumber
             },
+            "email": this.email,
             "userAuth": {
                 "login": this.email,
                 "pass": this.pass,
