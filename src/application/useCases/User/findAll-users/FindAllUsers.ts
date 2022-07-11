@@ -1,5 +1,4 @@
 import { IFindAllUsers } from "../../../ports/useCases/User/IFindAllUsers";
-import { User } from "../../../../domain/entity/User";
 import { IFindAllUserRepository } from "application/ports/adapters/repository/User/IFindAllUserRepository";
 import { TUser } from "../../../../domain/types/TUser";
 

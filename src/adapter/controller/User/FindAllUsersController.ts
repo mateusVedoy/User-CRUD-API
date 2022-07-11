@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { IUserController } from "../../ports/IUserController";
 import { IFindAllUsers } from "../../../application/ports/useCases/User/IFindAllUsers";
-import { User } from "../../../domain/entity/User";
 import { TUser } from "../../../domain/types/TUser";
 
 export class FindAllUsersController implements IUserController {
