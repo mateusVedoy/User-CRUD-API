@@ -10,7 +10,7 @@ export class FindUserById implements IFindUser {
         this.FindAllUsersRepository = findaALlUsersRepo;
     }
 
-    findUser(id: string): TUser {
+    find(id: string): TUser {
 
         try {
             const users = this.FindAllUsersRepository.findAll();

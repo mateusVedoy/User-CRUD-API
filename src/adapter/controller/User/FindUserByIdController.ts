@@ -14,7 +14,7 @@ export class FindUserByIdController implements IUserController {
     public handle(req: Request, res: Response): Response<TUser> {
         try {
             const { id } = req.query;
-            const user = this.FindUserService.findUser(id.toString());
+            const user = this.FindUserService.find(id.toString());
             return res.json({ "User": user });
         } catch (error) {
             return res.json({ "Message: ": error }).status(200);
