@@ -10,13 +10,13 @@ export class Address {
 
     constructor(addressId: string, country: string, state: string, city: string, neighborhood: string, street: string, streetNumber: number, zipCode: string){
         this.addressId = addressId;
-        this.country = country;
-        this.state = state;
-        this.city = city;
-        this.neighborhood = neighborhood;
-        this.street = street;
-        this.streetNumber = streetNumber;
-        this.zipCode = zipCode;
+        this.setCountry(country);
+        this.setState(state);
+        this.setCity(city);
+        this.setNeighborhood(neighborhood);
+        this.setStreet(street);
+        this.setStreetNumber(streetNumber);
+        this.setZipCode(zipCode);
     }
 
     public getAddressId(){

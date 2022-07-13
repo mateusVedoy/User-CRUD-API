@@ -1,5 +1,5 @@
-import { User } from "../../../../domain/entity/User";
+import { TUser } from "../../../../domain/types/TUser";
 
 export interface IFindAllUsers {
-    FindAll(): User[];
+    FindAll(): TUser[];
 }
