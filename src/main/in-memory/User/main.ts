@@ -11,6 +11,8 @@ import { DeleteUserRepository } from "../../../adapter/repository/in-memory/User
 import { UpdateUserRepository } from "../../../adapter/repository/in-memory/User/UpdateUserRepository";
 import { UpdateUser } from "../../../application/useCases/User/update-user/UpdateUser";
 import { UpdateUserController } from "../../../adapter/controller/User/UpdateUserController";
+import { DeleteUser } from "../../../application/useCases/User/delete-user/DeleteUser";
+import { DeleteUserController } from "../../../adapter/controller/User/DeleteUserController";
 
 //repos
 const createUserRepo = new CreateUserRepository();
@@ -26,16 +28,19 @@ const findUserById = new FindUserById(findAllUserRepo)
 const createUser = new CreateUser(createUserRepo, idGenerator);
 const findAllUsers = new FindAllUsers(findAllUserRepo);
 const updateUser = new UpdateUser(findAllUserRepo, updateUserRepo);
+const deleteUser = new DeleteUser(findAllUserRepo, deleteUserRepo);
 
 //control
 const findUserByIdController = new FindUserByIdController(findUserById);
 const createUserController = new CreateUserController(createUser);
 const findAllUsersController = new FindAllUsersController(findAllUsers);
 const updateUserController = new UpdateUserController(updateUser);
+const deleteUserController = new DeleteUserController(deleteUser);
 
 export {
     createUserController,
     findAllUsersController,
     findUserByIdController,
-    updateUserController
+    updateUserController,
+    deleteUserController
 }
